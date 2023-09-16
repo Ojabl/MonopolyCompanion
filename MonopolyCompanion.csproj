@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Pages\settingsIcon.svg" />
     <None Remove="Resources\Font\KabelBold.ttf" />
     <None Remove="Resources\Font\KabelMedium.ttf" />
   </ItemGroup>
@@ -19,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+	  <Resource Include="Pages\settingsIcon.svg" />
 	  <Resource Include="Resources\Font\KabelBold.ttf">
 	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
 	  </Resource>

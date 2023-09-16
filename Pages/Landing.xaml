@@ -9,18 +9,33 @@
       d:DesignHeight="600" d:DesignWidth="1000"
       Title="Landing" Background="White">
 
-    <Grid>
+    <Grid Background="#BFDBAE">
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.15*"/>
             <RowDefinition Height="0.8*"/>
         </Grid.RowDefinitions>
 
-        <UserControl:MainMenuTopBar/>
+        <UserControl:MainMenuTopBar Grid.Row="0"/>
+
+
 
         <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="auto" Width="auto">
-            <Button x:Name="newGameBtn" Margin="10" Content="New Game" Click="NewGameBtn_Click" FontFamily="{StaticResource KabelBold}"/>
-            <Button x:Name="loadGameBtn" Margin="10" Content="Load Game" Click="LoadGameBtn_Click" FontFamily="{StaticResource KabelBold}"/>
-            <Button x:Name="settingsBtn" Margin="10" Content="Settings" Click="SettingsBtn_Click" FontFamily="{StaticResource KabelBold}"/>
+            <Button Height="40" Width="150" x:Name="newGameBtn" Margin="10" Content="New Game" 
+                    Background="Transparent" Foreground="#8FBC72" BorderThickness="0"
+                    Click="NewGameBtn_Click" FontFamily="{StaticResource KabelBold}" FontSize="20"/>
+            <Button Height="40" Width="150" x:Name="loadGameBtn" Margin="10" Content="Load Game" 
+                    Background="Transparent" Foreground="#8FBC72" BorderThickness="0"
+                    Click="LoadGameBtn_Click" FontFamily="{StaticResource KabelBold}" FontSize="20"/>
         </StackPanel>
+        
+        <Button Name="settingsBtn" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="50" Height="50" Margin="30"
+                Click="SettingsBtn_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="C:\Users\osaja\Programowanie\C#\MonopolyCompanion\Resources\Images\setting.png"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        
     </Grid>
 </Page>
