@@ -1,0 +1,26 @@
+﻿<Page x:Class="MonopolyCompanion.Pages.Landing"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MonopolyCompanion.Pages"
+      xmlns:UserControl="clr-namespace:MonopolyCompanion.UserControlls"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1000"
+      Title="Landing" Background="White">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.8*"/>
+        </Grid.RowDefinitions>
+
+        <UserControl:MainMenuTopBar/>
+
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="auto" Width="auto">
+            <Button x:Name="newGameBtn" Margin="10" Content="New Game" Click="NewGameBtn_Click" FontFamily="{StaticResource KabelBold}"/>
+            <Button x:Name="loadGameBtn" Margin="10" Content="Load Game" Click="LoadGameBtn_Click" FontFamily="{StaticResource KabelBold}"/>
+            <Button x:Name="settingsBtn" Margin="10" Content="Settings" Click="SettingsBtn_Click" FontFamily="{StaticResource KabelBold}"/>
+        </StackPanel>
+    </Grid>
+</Page>

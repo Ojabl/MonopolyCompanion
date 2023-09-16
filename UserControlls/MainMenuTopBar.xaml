@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="MonopolyCompanion.UserControlls.MainMenuTopBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MonopolyCompanion.UserControlls"
+             mc:Ignorable="d" 
+             d:DesignHeight="120" d:DesignWidth="1000">
+    <Grid Background="#BFDBAE">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.9*"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="C:\Users\osaja\Programowanie\C#\MonopolyCompanion\Resources\Images\MonopolyGuyIcon.png" Width="50" Height="50"/>
+
+        <Label Grid.Column="1" Content="Monopoly Companion v.1.0.0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,40,0" FontFamily="{StaticResource KabelBold}" FontSize="40"/>
+    </Grid>
+</UserControl>

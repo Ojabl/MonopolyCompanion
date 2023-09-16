@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <PackageIcon>MonopolyGuyIcon.png</PackageIcon>
+    <ApplicationIcon>Resources\Images\MonopolyGuyIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Font\KabelBold.ttf" />
+    <None Remove="Resources\Font\KabelMedium.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Images\MonopolyGuyIcon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <Resource Include="Resources\Font\KabelBold.ttf">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+	  <Resource Include="Resources\Font\KabelMedium.ttf">
+		  <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Resources\Images\MonopolyGuyIcon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
