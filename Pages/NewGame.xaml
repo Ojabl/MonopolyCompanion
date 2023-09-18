@@ -4,12 +4,77 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MonopolyCompanion.Pages"
+      xmlns:UserContol="clr-namespace:MonopolyCompanion.UserControlls"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="1000"
       Title="NewGame">
 
-    <Grid Background="White">
-        <Button x:Name="BackBtn" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="50" Margin="10" Command="NavigationCommands.BrowseBack"/>
-        <Label Content="New Game" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    <Grid Background="#BFDBAE">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition Height="0.8*"/>
+        </Grid.RowDefinitions>
+
+        <UserContol:NewGameTopBar/>
+
+        <!-- USER CONTROL for new game -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.8*"/>
+                <RowDefinition Height="0.2*"/>
+            </Grid.RowDefinitions>
+ 
+            <StackPanel Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Right" Orientation="Vertical"
+                        Height="170" Width="300" Margin="20,100,100,20">
+                <StackPanel Orientation="Horizontal">
+                    <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Right" Content="Player name: "
+                           HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Width="100" Height="40" Margin="20,20,10,20"
+                           Foreground="#8FBC72" FontFamily="{StaticResource KabelBold}"/>
+                    <TextBox Name="playerName" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Right"
+                             Width="150" Height="40" Margin="10,20,20,20"
+                             Background="Transparent" Foreground="#8FBC72" BorderThickness="0" FontFamily="{StaticResource Kabel}"
+                             FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                             FontSize="15"/>
+                </StackPanel>
+                <Button Name="addPlayerButton" Content="Add" Width="100" Height="40" Margin="20,10,20,20" 
+                        HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Click="AddPlayerBtn_Click" Background="Transparent" Foreground="#8FBC72" FontFamily="{StaticResource KabelBold}"
+                        BorderThickness="0" FontSize="15"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1" Height="auto" Width="350" Margin="50,40,50,0">
+                <ListView Name="playersLv" VerticalAlignment="Top" HorizontalAlignment="Left" SelectionMode="Single"
+                      Width="350" Height="250" Margin="0,0,0,10" Background="Transparent" BorderThickness="5"
+                      Foreground="#8FBC72" FontFamily="{StaticResource Kabel}" FontWeight="Bold" FontSize="15" 
+                      BorderBrush="#8FBC72">
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Button Name="deletePlayerButton" Content="Delete" Width="100" Height="40" Margin="20,10,20,20" 
+                        HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Click="DeletePlayerBtn_Click" Background="Transparent" Foreground="#8FBC72" FontFamily="{StaticResource KabelBold}"
+                        BorderThickness="0" FontSize="15"/>
+                    <Button Name="ClearPlayerButton" Content="Clear" Width="100" Height="40" Margin="20,10,20,20" 
+                        HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Click="ClearPlayerBtn_Click" Background="Transparent" Foreground="#8FBC72" FontFamily="{StaticResource KabelBold}"
+                        BorderThickness="0" FontSize="15"/>
+                </StackPanel>
+            </StackPanel>
+
+            <Button Name="startGameBtn" Content="Start Game" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                    Height="40" Width="150" Margin="20,20,20,30" Background="Transparent" Foreground="#8FBC72" BorderThickness="0"
+                    FontFamily="{StaticResource KabelBold}" FontSize="20" Click="StartGameBtn_Click"/>
+
+        </Grid>
+        
+        
     </Grid>
 </Page>

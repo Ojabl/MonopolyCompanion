@@ -15,11 +15,9 @@ using System.Windows.Shapes;
 
 namespace MonopolyCompanion.Pages
 {
-    /// <summary>
-    /// Interaction logic for Game.xaml
-    /// </summary>
     public partial class Game : Page
     {
+
         public Game()
         {
             InitializeComponent();

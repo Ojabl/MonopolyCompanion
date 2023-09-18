@@ -17,8 +17,6 @@
 
         <UserControl:MainMenuTopBar Grid.Row="0"/>
 
-
-
         <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Height="auto" Width="auto">
             <Button Height="40" Width="150" x:Name="newGameBtn" Margin="10" Content="New Game" 
                     Background="Transparent" Foreground="#8FBC72" BorderThickness="0"
@@ -36,6 +34,10 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        
+
+        <Label Name="authorLabel" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" 
+               Margin="15" FontFamily="{StaticResource KabelBold}" FontSize="7" Foreground="#8FBC72"
+               Content="@Author Oskar Jabłoński, 2023"/>
+
     </Grid>
 </Page>
