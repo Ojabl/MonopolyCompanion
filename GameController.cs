@@ -4,9 +4,9 @@ namespace MonopolyCompanion
 {
     class GameController
     {
-        List<Player> players = new List<Player> ();
-        List<ICard> cards = new List<ICard>(); 
-        Player currentPlayer;
+        public List<Player> players = new List<Player> ();
+        public List<ICard> cards = new List<ICard>(); 
+        public Player currentPlayer;
         
         public GameController(List<Player> players)
         {
@@ -78,10 +78,7 @@ namespace MonopolyCompanion
                 new ChanceCard(14, "Take a trip to Reading Railroad. If you pass Go, collect 200$"),
                 new ChanceCard(15, "You have been elected Chairman of the Board. Pay each player 50$.", value: -50 * players.Count),
                 new ChanceCard(16, "Your building loan matures. Receive 150$.", value: 150)
-            };
-
-
-            
+            };   
         }
     }
 }

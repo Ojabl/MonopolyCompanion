@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MonopolyCompanion
 {
-    enum EnPlayerToken
+    public enum EnPlayerToken
     {
         ScottishTerrier,
         Battleship,

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MonopolyCompanion
 {
-    class Player : IPlayer
+    public class Player : IPlayer
     {
         public string Name { get; set; }
         public int Money { get; set; }
@@ -23,6 +23,11 @@ namespace MonopolyCompanion
             Hand = new List<ICard>();
             MortgagedEstates = new List<Estate>();
             hasGetOutOfJailCard = false;
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }

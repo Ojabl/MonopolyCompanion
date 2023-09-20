@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MonopolyCompanion
 {
-    class Estate : ICard
+    public class Estate : ICard
     {
         public string Name { get; set; }
         public EnCardType CardType { get; set; }

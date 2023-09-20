@@ -17,6 +17,8 @@ namespace MonopolyCompanion.Pages
 {
     public partial class NewGame : Page
     {
+        internal static GameController gameController;
+
         List<Player> PlayerList { get; set; }
         
 
@@ -32,6 +34,15 @@ namespace MonopolyCompanion.Pages
                 if(playersLv.Items.Count >= 8)
                 {
                     MessageBox.Show("You can't add more than 8 players!");
+                    playerName.Clear();
+                    playerName.Focus();
+                    return;
+                }
+                if(playerName.Text.Length > 12)
+                {
+                    MessageBox.Show("Player name can't be longer than 12 characters!");
+                    playerName.Clear();
+                    playerName.Focus();
                     return;
                 }
                 playersLv.Items.Add(playerName.Text);
@@ -66,7 +77,7 @@ namespace MonopolyCompanion.Pages
                 }
 
                 //pobrać dane graczy do listy i utworzyć obiekty graczy
-                GameController gameController = new GameController(PlayerList);
+                gameController = new GameController(PlayerList);
 
                 this.NavigationService.Navigate(new Uri("/Pages/Game.xaml", UriKind.Relative));
             }

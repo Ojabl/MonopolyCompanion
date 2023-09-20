@@ -1,26 +1,55 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace MonopolyCompanion.Pages
 {
     public partial class Game : Page
     {
 
+        GameController gameController = NewGame.gameController;
+        public static Player? currentPlayer { get; set; }
+
+
         public Game()
         {
+            DataContext = this;
             InitializeComponent();
+            currentPlayer = gameController.players[0];
+            currentPlayerLb.Content = currentPlayer;
+            moneyLb.Content = currentPlayer.Money + " $";
+        }
+
+        private void MainMenuBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/Pages/Landing.xaml", UriKind.Relative));
+        }
+        private void SettingsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/Pages/Settings.xaml", UriKind.Relative));
+        }
+        private void SaveGameBtn_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO
+        }
+
+        private void BuyEstateBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SellEstateBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RollDiceBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Random random = new Random();
+            int dice1 = random.Next(1, 7);
+            int dice2 = random.Next(1, 7);
+
+            MessageBox.Show("You rolled " + dice1 + " and " + dice2 + "!");
         }
     }
 }

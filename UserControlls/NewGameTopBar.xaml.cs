@@ -15,14 +15,16 @@ using System.Windows.Shapes;
 
 namespace MonopolyCompanion.UserControlls
 {
-    /// <summary>
-    /// Interaction logic for NewGameTopBar.xaml
-    /// </summary>
     public partial class NewGameTopBar : UserControl
     {
         public NewGameTopBar()
         {
             InitializeComponent();
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationCommands.BrowseBack.Execute(null, null);
         }
     }
 }

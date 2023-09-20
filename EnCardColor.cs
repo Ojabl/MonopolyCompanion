@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MonopolyCompanion
 {
-    enum EnCardColor
+    public enum EnCardColor
     {
         Brown,
         LightBlue,

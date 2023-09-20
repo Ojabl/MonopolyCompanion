@@ -1,6 +1,6 @@
 ﻿namespace MonopolyCompanion
 {
-    internal interface ICard
+    public interface ICard
     {
         public string Name { get; set; }
 

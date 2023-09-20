@@ -4,11 +4,100 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:MonopolyCompanion.Pages"
+      xmlns:UserControl="clr-namespace:MonopolyCompanion.UserControlls"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="1000"
       Title="Game">
 
-    <Grid>
-        
+    <Grid Background="#BFDBAE">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition Height="0.8*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Background="#BFDBAE"> <!-- top bar -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0.25*"/>
+                <ColumnDefinition Width="0.25*"/>
+                <ColumnDefinition Width="0.15*"/>
+                <ColumnDefinition Width="0.15*"/>
+                <ColumnDefinition Width="0.1*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Source="C:\Users\osaja\Programowanie\C#\MonopolyCompanion\Resources\Images\MonopolyGuyIconGreen.ico" Width="50" Height="50"/>
+
+            <StackPanel Orientation="Horizontal" Grid.Column="1">
+                <Label Content="Current Player:" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" 
+                       FontSize="10" Margin="10,0,10,0" FontFamily="{StaticResource KabelBold}" Foreground="#8FBC72"/>
+                <Label Name="currentPlayerLb" Content="{Binding currentPlayer}" Width="130" Height="40"
+                       FontSize="13" FontFamily="{StaticResource KabelBold}" Foreground="#8FBC72"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Grid.Column="2">
+                <Label Content="Money: " HorizontalAlignment="Center" VerticalAlignment="Center"
+                   FontSize="10" Margin="10,0,20,0" FontFamily="{StaticResource KabelBold}" Foreground="#8FBC72"/>
+                <Label Name="moneyLb" Content="" Width="130" Height="40"
+                       FontSize="13" FontFamily="{StaticResource KabelBold}" Foreground="#8FBC72"
+                       HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+            </StackPanel>
+
+            <Button Name="mainMenuBtn" Grid.Column="3" Content="Main Menu" HorizontalAlignment="Center" VerticalAlignment="Center"
+                BorderThickness="0" FontFamily="{StaticResource KabelBold}" FontSize="15" Foreground="#8FBC72" Background="#BFDBAE"
+                Click="MainMenuBtn_Click"/>
+
+            <Button Name="saveGameBtn" Grid.Column="4" Content="Save Game" HorizontalAlignment="Center" VerticalAlignment="Center"
+                BorderThickness="0" FontFamily="{StaticResource KabelBold}" FontSize="15" Foreground="#8FBC72" Background="#BFDBAE"
+                Click="SaveGameBtn_Click"/>
+            <!--TODO SAVING GAME-->
+
+            <Button Name="settingsBtn" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center" Width="40" Height="40"
+                Click="SettingsBtn_Click" Focusable="True">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="C:\Users\osaja\Programowanie\C#\MonopolyCompanion\Resources\Images\setting.png"/>
+                    </ControlTemplate>
+                </Button.Template>
+                
+            </Button>
+
+            <Line Grid.ColumnSpan="6" X1="0" X2="1000" Y1="89" Y2="89" Visibility="Visible" Stroke="#8FBC72" StrokeThickness="10"/>
+        </Grid>
+
+        <Grid Grid.Row="1"> <!-- main grid -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*"/>
+                <ColumnDefinition Width="0.8*"/>
+            </Grid.ColumnDefinitions>
+
+            <Line Grid.ColumnSpan="2" X1="200" X2="200" Y1="801" Y2="-1" Visibility="Visible" Stroke="#8FBC72" StrokeThickness="10"/>
+            <Grid Grid.Column="0"> <!-- left side menu -->
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Button Name="rollDiceBtn" Content="Roll dice" Grid.Row="0" Width="100" Height="40" Click="RollDiceBtn_Click" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Button Name="buyEstateBtn" Content="Buy Estate" Grid.Row="0" Width="75" Height="40" Click="BuyEstateBtn_Click" Margin="10"/>
+                    <Button Name="sellEstateBtn" Content="Sell Estate" Grid.Row="1" Width="75" Height="40" Click="SellEstateBtn_Click" Margin="10"/>
+                </StackPanel>
+                
+                
+                
+            </Grid>
+            <Grid Grid.Column="1"> <!-- right side menu -->
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MonopolyCompanion
 {
-    enum EnCardType
+    public enum EnCardType
     {
         Estate,
         Station,

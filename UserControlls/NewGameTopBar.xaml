@@ -16,7 +16,7 @@
 
         <Button Name="backBtn" Grid.Column="1" Content="Go Back" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="50" 
                 Margin="10"  BorderThickness="0" FontFamily="{StaticResource KabelBold}" FontSize="15" Foreground="#8FBC72" Background="#BFDBAE"
-                Command="NavigationCommands.BrowseBack"/>
+                Click="BackBtn_Click"/>
 
         <Label Grid.Column="2" Content="Monopoly Companion" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,70,0" 
                FontFamily="{StaticResource KabelBold}" FontSize="40" Foreground="#8FBC72"/>
